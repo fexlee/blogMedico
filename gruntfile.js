@@ -117,9 +117,6 @@ module.exports = function (grunt) {
       }
     },
     uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
       production: {
         options: {
           mangle: false
@@ -267,10 +264,6 @@ module.exports = function (grunt) {
   // Run the project in production mode
   grunt.registerTask('prod', ['build', 'env:prod', 'mkdir:upload', 'copy:localConfig', 'concurrent:default']);
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+
 
 };
