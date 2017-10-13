@@ -4,10 +4,10 @@ module.exports = {
   secure: true,
   port: process.env.PORT || 8443,
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://fexlee:123456@ds119565.mlab.com:19565/blogmedico',
     options: {
-      user: '',
-      pass: ''
+      user: 'fexlee',
+      pass: '123456'
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
