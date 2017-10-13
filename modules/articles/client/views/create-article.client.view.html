@@ -1,0 +1,49 @@
+<section  data-ng-controller="ArticlesController" style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+  <div class="container">
+  <div class="page-header">
+    <h1>Nuevo Artículo</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="articleForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+      <fieldset>
+        <div class="form-group">
+          <label class="control-label" for="title">Título</label>
+          <div class="controls">
+            <input name="title" type="text" data-ng-model="title" id="title" class="form-control" placeholder="Título">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="author">Autor</label>
+          <div class="controls">
+            <input name="author" type="text" data-ng-model="author" id="author" class="form-control" placeholder="Autor">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">Contenido</label>
+          <div class="controls">
+            <textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Contenido"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="source">Fuente</label>
+          <div class="controls">
+            <input name="source" type="text" data-ng-model="source" id="source" class="form-control" placeholder="Fuente">
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default" value="Subir Artículo">
+        </div>
+        <div data-ng-show="error" class="text-danger">
+          <strong data-ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+
+</section>
+    

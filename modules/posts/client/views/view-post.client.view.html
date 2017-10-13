@@ -1,0 +1,36 @@
+<section  style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+ <div class="container">
+  <div class="page-header">
+    <h1><span ng-bind="vm.post.title"></span> <small>Publicado en  {{vm.post.category}}</small></h1>
+    <div ng-bind="vm.post.body"></div>
+    <br>
+    <p><strong>Etiqueta:</strong> {{vm.post.tags}}</p>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.post.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="posts.edit({ postId: vm.post._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Publicado en
+      <span ng-bind="vm.post.created | date:'mediumDate'"></span>
+      por
+      <span ng-if="vm.post.user"
+            ng-bind="vm.post.user.displayName"></span>
+      <span ng-if="!vm.post.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.post.content"></p>
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+
+</section>

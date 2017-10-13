@@ -1,0 +1,38 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()" style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+  <div  class="container">
+  <div class="page-header">
+    <h1 data-ng-bind="article.title"></h1>
+  </div>
+  <div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
+    <a class="btn btn-primary" data-ui-sref="articles.edit({articleId: article._id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="remove();">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div align="left">
+    <h4>
+      <strong>Autor: </strong><span data-ng-bind="article.author"></span>
+    </h4>
+    <em><strong>Fuente: </strong><span data-ng-bind="article.source"></span></em>
+  </div>
+  <br>
+  <p align="justify" data-ng-bind="article.content"></p>
+  <div align="right">
+    <small>
+      <em class="text-muted">
+        Publicado en
+        <span data-ng-bind="article.created | date:'mediumDate'"></span>
+        por
+        <span data-ng-bind="article.user.displayName"></span>
+      </em>
+    </small>
+  </div>
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+
+</section>

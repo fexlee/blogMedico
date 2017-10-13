@@ -1,0 +1,60 @@
+
+<section data-ng-controller="HomeController" style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);" >
+ 
+<div style= "padding-right:0px; padding-left:0px; margin-right:auto; margin-left:auto;" >
+    <carousel interval="3000" > 
+        <slide >
+          <img style="margin: 0 auto;" src="modules/core/img/slider/1.jpg" alt="First slide">
+          
+        </slide> 
+        <slide >
+          <img style="margin: 0 auto;" src="modules/core/img/slider/2.jpg" alt="Second slide">
+          
+        </slide>
+        <slide>
+          <img style="margin: 0 auto;" src="modules/core/img/slider/3.jpg" alt="Third slide">
+         
+        </slide>
+        <slide>
+            <img style="margin: 0 auto;" src="modules/core/img/slider/4.jpg" alt="Third slide">
+            
+          </slide>
+          <slide>
+            <img style="margin: 0 auto;" src="modules/core/img/slider/5.jpg" alt="Third slide">
+             
+          </slide>
+      </carousel>
+</div>
+<hr>
+<div class="container">
+<div class="list-group">
+  <a ng-repeat="post in vm.posts"
+     ui-sref="posts.view({ postId: post._id })"
+     class="list-group-item">
+     <br>
+     <h4 style="font-weight:bold; font-size:22px;" class="list-group-item-heading" ng-bind="post.title"></h4>
+     <hr>
+     <p>{{post.body}}</p>
+    <hr>
+    <div align="right">
+    <small class="list-group-item-text">
+        Publicado en
+        <span ng-bind="post.created | date:'mediumDate'"></span>
+        por
+        <span ng-if="post.user" ng-bind="post.user.displayName"></span>
+        <span ng-if="!post.user">Deleted User</span>
+      </small>
+      <br>
+    <p><strong>Etiqueta:</strong> {{post.tags}}</p>
+  </div>
+  </a>
+</div>
+</div>
+<div class="alert alert-warning text-center" ng-if="vm.posts.$resolved && !vm.posts.length">
+  No hay publicaciones disponibles, ¿quieres <a ui-sref="posts.create">crear</a> una publicación?
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727; ">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+</section>

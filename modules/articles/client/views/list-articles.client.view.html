@@ -1,0 +1,40 @@
+<section  data-ng-controller="ArticlesController" data-ng-init="find()" style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+ <div class="container"> 
+  <div class="page-header">
+    <h1>Artículos</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="article in articles" data-ui-sref="articles.view({articleId: article._id})" class="list-group-item">
+      <br>
+      <h3 style="font-weight:bold;" class="list-group-item-heading" data-ng-bind="article.title"></h3>
+      <small class="list-group-item-text">
+        <strong>Autor: </strong><span data-ng-bind="article.author"></span>
+      </small>
+      <hr>
+      <p class="list-group-item-text" align="justify" data-ng-bind="article.content"></p>
+      <br>
+      <div align="right">
+        <small class="list-group-item-text">
+          Publicado en
+          <span data-ng-bind="article.created | date:'mediumDate'"></span>
+          por
+          <span data-ng-bind="article.user.displayName"></span>
+        </small>
+        <br>
+        <small class="list-group-item-text">
+          <strong>Fuente: </strong><span data-ng-bind="article.source"></span>
+        </small>
+      </div>
+      <br>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
+    No hay actículos disponibles, ¿quieres <a data-ui-sref="articles.create">crear</a> un artículo?
+  </div>
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+</section>
+

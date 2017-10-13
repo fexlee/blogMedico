@@ -1,0 +1,46 @@
+<section style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+ <div  class="container"> 
+  <div class="page-header">
+    <h1>{{vm.post._id ? 'Editar Publicación' : 'Nueva Publicación'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.postForm" class="form-horizontal" ng-submit="vm.save(vm.form.postForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Titulo</label>
+          <input name="title" type="text" ng-model="vm.post.title" id="title" class="form-control" placeholder="Titulo" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="body">Comentario</label>
+          <textarea name="body" type="text" ng-model="vm.post.body" id="body" class="form-control" placeholder="Comentario" required></textarea>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tags">Etiqueta</label>
+          <input name="tags" type="text" ng-model="vm.post.tags" id="tags" class="form-control" placeholder="Etiqueta" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tags">Etiqueta</label>
+          <select name="category" ng-model="vm.post.category" id="category" class="form-control" required>
+            <option value=""> --- Seleccione una opción --- </option>
+            <option value="Negocios">Negocios</option>
+            <option value="Educación">Educación</option> 
+            <option value="Tecnología">Tecnología</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.post._id ? 'Actualizar' : 'Publicar'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+</section>

@@ -1,0 +1,35 @@
+<section  style="background-image: url(modules/core/img/backgroundImg/checkered-pattern.png);">
+ <div class="container">
+  <div class="page-header">
+    <h1>Publicaciones</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="post in vm.posts"
+       ui-sref="posts.view({ postId: post._id })"
+       class="list-group-item">
+       <h4 style="font-weight:bold;" class="list-group-item-heading" ng-bind="post.title"></h4>
+      <small class="list-group-item-text">
+        Publicado en
+        <span ng-bind="post.created | date:'mediumDate'"></span>
+        por
+        <span ng-if="post.user" ng-bind="post.user.displayName"></span>
+        <span ng-if="!post.user">Deleted User</span>
+      </small>
+      <br>
+      <hr>
+      
+      <p>{{post.body}}</p>
+      <hr>
+      <p><strong>Etiqueta:</strong> {{post.tags}}</p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.posts.$resolved && !vm.posts.length">
+    No hay publicaciones disponibles, ¿quieres <a ui-sref="posts.create">crear</a> una publicación?
+  </div>
+</div> 
+<br><br><br>
+<div align="center" style="background-color:#272727;">
+<p style="color:white; padding:15px;">&copy; Realizado por Felix Lee</p>
+</div>
+
+</section>
