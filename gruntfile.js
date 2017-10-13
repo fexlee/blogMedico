@@ -120,10 +120,6 @@ module.exports = function (grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      build: {
-        src: 'src/factorial.js',
-        dest: 'build/factorial.min.js'
-      },
       production: {
         options: {
           mangle: false
