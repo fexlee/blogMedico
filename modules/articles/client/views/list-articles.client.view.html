@@ -11,7 +11,8 @@
         <strong>Autor: </strong><span data-ng-bind="article.author"></span>
       </small>
       <hr>
-      <p class="list-group-item-text" align="justify" data-ng-bind="article.content"></p>
+      <p class="list-group-item-text" align="justify">{{(article.content | limitTo:650) + (article.content.length > 650? '...': '')}}</p>
+      
       <br>
       <div align="right">
         <small class="list-group-item-text">
