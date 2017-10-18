@@ -20,7 +20,7 @@
 
     // Remove existing Post
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Seguro que quieres eliminar la publicación?')) {
         vm.post.$remove($state.go('posts.list'));
       }
     }

@@ -23,15 +23,7 @@
           pageTitle: 'Posts List'
         }
       })
-      /*.state('posts.list', {
-        url: '',
-        templateUrl: 'modules/core/views/home.client.view.html',
-        controller: 'PostsListController',
-        controllerAs: 'vm',
-        data: {
-          pageTitle: 'Posts List'
-        }
-      })*/
+      
       .state('posts.create', {
         url: '/create',
         templateUrl: 'modules/posts/views/form-post.client.view.html',
