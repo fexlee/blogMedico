@@ -620,15 +620,7 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
           pageTitle: 'Posts List'
         }
       })
-      /*.state('posts.list', {
-        url: '',
-        templateUrl: 'modules/core/views/home.client.view.html',
-        controller: 'PostsListController',
-        controllerAs: 'vm',
-        data: {
-          pageTitle: 'Posts List'
-        }
-      })*/
+      
       .state('posts.create', {
         url: '/create',
         templateUrl: 'modules/posts/views/form-post.client.view.html',
@@ -723,7 +715,7 @@ angular.module('core').service('Socket', ['Authentication', '$state', '$timeout'
 
     // Remove existing Post
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Seguro que quieres eliminar la publicación?')) {
         vm.post.$remove($state.go('posts.list'));
       }
     }
